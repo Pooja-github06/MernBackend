@@ -4,7 +4,7 @@
     "env":{
         "DB_USER":"Pooju",
         "DB_PASSWORD":"Test1234",
-        "DB_NAME":"mern",
+        "DB_NAME":"mern-prod",
         "JWT_TOKENKEY":"supersecret"
     }
 }
