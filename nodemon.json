@@ -1,0 +1,10 @@
+
+
+{
+    "env":{
+        "DB_USER":"Pooju",
+        "DB_PASSWORD":"Test1234",
+        "DB_NAME":"mern",
+        "JWT_TOKENKEY":"supersecret"
+    }
+}
