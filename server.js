@@ -13,10 +13,10 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(bodyParser.json());
 
 // Serve static files in uploads/images
 app.use('/uploads/images', express.static(path.join(__dirname, 'uploads', 'images')));
+app.use(bodyParser.json());
 
 app.use(cors());
 app.use(express.json());
