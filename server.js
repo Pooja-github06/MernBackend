@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
 app.use(cors());
+app.use(express.json());
 
 // app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
@@ -54,7 +55,10 @@ console.log('👀 ENV CHECK:', process.env.DB_USER, process.env.DB_PASSWORD, pro
 // mongoose.connect(`mongodb+srv://Pooju:Test1234@cluster0.athhtu0.mongodb.net/mern?retryWrites=true&w=majority&appName=Cluster0`).then(() => {
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.athhtu0.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`).then(() => {
-    app.listen(5000);
+    // app.listen(5000);
+    app.listen(process.env.PORT || 5000, () => {
+        console.log('Server running');
+    });
 
 }).catch((err) => {
     console.log(err)

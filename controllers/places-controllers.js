@@ -54,6 +54,11 @@ const getPlacesByUserId = async (req, res, next) => {
 
 
 const createPlace = async (req, res, next) => {
+    console.log('📦 Received createPlace request');
+    console.log('📝 Body:', req.body);
+    console.log('📁 Uploaded File:', req.file);
+    console.log('🔐 Authenticated User:', req.userData);
+
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         throw new HttpError("Invalid inputs passed, please check the data", 422);
@@ -80,6 +85,7 @@ const createPlace = async (req, res, next) => {
     let user;
     try {
         user = await User.findById(req.userData.userId)
+        console.log(user, 'userdata-----')
     } catch (err) {
         const error = new HttpError("Creating place failed, please try again", 500)
         return next(error)
